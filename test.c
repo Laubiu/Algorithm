@@ -12,7 +12,6 @@ int search(int a[],int n)
 		min=a[i];
 	}
 	printf("%d %d",max,min);
-	printf("hello!");
 }
 
 int main()
