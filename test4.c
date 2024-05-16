@@ -1,4 +1,4 @@
-/*
+//非递归合并排序
 #include <stdio.h>
 
 void compare(int a[],int b[],int m,int n,int c[])
@@ -49,8 +49,9 @@ int main()
 	}
 	return 0;
 }
-*/
 
+---------------------------------------------------------
+//递归合并排序（归并）
 #include <stdio.h>
 
 void merge(int arr[],int left,int mid,int right)
