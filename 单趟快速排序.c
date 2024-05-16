@@ -2,27 +2,29 @@
 
 void sort(int a[],int left,int right)
 {
-	int key=left;
-	int temp;
+	int key=0;
+	int temp=0,num=0;
 	while(left<right)
 	{
-		while(a[key]<=a[right])
+		while(left<right && a[key]<=a[right])
 		{
 			right--;
 		}
-		while(a[key]>=a[left])
+		while(left<right && a[key]>=a[left])
 		{
 			left++;
 		}
 		if(left<right)
 		{
-			temp=a[key];
-			a[key]=a[right];
+			temp=a[left];
+			a[left]=a[right];
 			a[right]=temp;
 		}
 		else if(left==right)
 		{
+			num=a[key];
 			a[key]=a[right];
+			a[right]=num;
 		}
 		else
 		break;
