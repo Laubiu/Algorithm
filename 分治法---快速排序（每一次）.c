@@ -27,9 +27,9 @@ void sort(int a[], int left, int right)
             a[j] = temp;
         }
     }
-    num = a[key];
+    temp = a[key];
     a[key] = a[i];
-    a[i] = num;
+    a[i] = temp;
     
     for (int k = left; k <= right; k++)
     {
@@ -45,15 +45,15 @@ int main()
 {
     int a[] = {5, 2, 7, 3, 1, 4, 8, 6};
     int left = 0, right = 7;
-    printf("递归快速排序前的结果为：\n");
+    printf("閫掑綊蹇�熸帓搴忓墠鐨勭粨鏋滀负锛歕n");
     for (int i = 0; i < right + 1; i++)
     {
         printf("%d ", a[i]);
     }
     printf("\n");
-    printf("\n具体排序过程为：\n");
+    printf("\n鍏蜂綋鎺掑簭杩囩▼涓猴細\n");
     sort(a, left, right);
-    printf("\n递归快速排序后的结果为: \n");
+    printf("\n閫掑綊蹇�熸帓搴忓悗鐨勭粨鏋滀负: \n");
     for (int i = 0; i < right + 1; i++)
     {
         printf("%d ", a[i]);
