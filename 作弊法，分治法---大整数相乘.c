@@ -1,31 +1,32 @@
+//å†™å‡ºè¿™ç§å‹¾å²ä»£ç çš„ä½œè€…ä¹Ÿæ˜¯ç¥ä»™ï¼Œæ²¡é”™å°±æ˜¯æˆ‘
 #include <stdio.h>
-//intÀà×î´óÖ»ÄÜÊä³ö2147483647£¬ÏÔÈ»²»¹»´óÕûÊıÏà³Ë½á¹ûÎ»Êı
+//intç±»æœ€å¤§åªèƒ½è¾“å‡º2147483647ï¼Œæ˜¾ç„¶ä¸å¤Ÿå¤§æ•´æ•°ç›¸ä¹˜ç»“æœä½æ•°
 long long int shorten(long long int a, long long int b, int n) {
     if (n == 1) {
         return a * b;
     } 
 	else 
 	{
-        // ¼ÆËã10µÄÃİ
+        // è®¡ç®—10çš„å¹‚
         long long int power = 1;
         for (int i = 0; i < n / 2; i++) 
 		{
             power *= 10;
         }
         
-        //²ğ·ÖÎªËÄ¸öÎ»´Î
+        //æ‹†åˆ†ä¸ºå››ä¸ªä½æ¬¡
         long long int a_high = a / power;
         long long int a_low = a % power;
         long long int b_high = b / power;
         long long int b_low = b % power;
         
-        //¼ÆËãËÄ¸ö³Ë»ı
+        //è®¡ç®—å››ä¸ªä¹˜ç§¯
         long long int p1 = shorten(a_high, b_high, n / 2);
         long long int p2 = shorten(a_high, b_low, n / 2);
         long long int p3 = shorten(a_low, b_high, n / 2);
         long long int p4 = shorten(a_low, b_low, n / 2);
         
-        //·µ»Ø¼ÆËã½á¹û
+        //è¿”å›è®¡ç®—ç»“æœ
         long long int result = p1 * power * power + (p2 + p3) * power + p4;
         return result;
     }
@@ -35,13 +36,13 @@ int main() {
     long long int a = 1234;
     long long int b = 5678;
     long long int result1 = shorten(a, b, 4);
-    printf("%lldÓë%lldÏà³ËµÄ½á¹ûÎª£º",a,b);
+    printf("%lldä¸%lldç›¸ä¹˜çš„ç»“æœä¸ºï¼š",a,b);
     printf("%lld\n", result1);
     
     long long int c = 12345678;
     long long int d = 87654321;
     long long int result2 = shorten(c, d, 8);
-    printf("\n%lldÓë%lldÏà³ËµÄ½á¹ûÎª£º",c,d);
+    printf("\n%lldä¸%lldç›¸ä¹˜çš„ç»“æœä¸ºï¼š",c,d);
     printf("%lld", result2);
     
     return 0;
