@@ -35,20 +35,23 @@ int push(struct works a[],int n)
 	int p[n],count=0,sum=0;
 	p[0]=a[0].no;
 	int m=a[0].time;
+	int nn=1;
 	int i=1;
 	while(m>0)
 	{
 		if(m>=a[i].time)
 		{
+			nn++;
 			p[i]=a[i].no;
-			m=m-1;
+			m=m-nn;
 			count++;
 			sum=sum+a[i].profile;
 		}
 		else if(a[i].time>m)
 		{
+			nn++;
 			p[i]=a[i].no;
-			m=a[i].time-(i+1);
+			m=a[i].time-nn;
 			count++;
 			sum=sum+a[i].profile;
 		}
