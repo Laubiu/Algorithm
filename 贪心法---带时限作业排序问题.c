@@ -32,26 +32,23 @@ void sort(struct works a[], int n)
 int push(struct works a[],int n)
 {
 	printf("所选择的作业有：");
-	int p[n],count=0,sum=0;
+	int p[n],count=1,sum=0;
 	p[0]=a[0].no;
 	int m=a[0].time;
-	int nn=1;
 	int i=1;
 	while(m>0)
 	{
 		if(m>=a[i].time)
 		{
-			nn++;
 			p[i]=a[i].no;
-			m=m-nn;
+			m=m-count;
 			count++;
 			sum=sum+a[i].profile;
 		}
 		else if(a[i].time>m)
 		{
-			nn++;
 			p[i]=a[i].no;
-			m=a[i].time-nn;
+			m=a[i].time-count;
 			count++;
 			sum=sum+a[i].profile;
 		}
@@ -60,7 +57,7 @@ int push(struct works a[],int n)
 		i++;
 	}
 	
-	for(int i=0;i<=count;i++)
+	for(int i=0;i<=count-1;i++)
 	{
 		printf("%d ",p[i]);
 	}
