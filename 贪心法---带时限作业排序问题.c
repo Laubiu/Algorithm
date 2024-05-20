@@ -38,18 +38,18 @@ int push(struct works a[],int n)
 	int i=1;
 	while(m>0)
 	{
-		if(m>=a[i].time)
+		if(m>a[i].time)
 		{
 			p[i]=a[i].no;
-			m=m-count;
 			count++;
+			m=m-count;
 			sum=sum+a[i].profile;
 		}
 		else if(a[i].time>m)
 		{
 			p[i]=a[i].no;
-			m=a[i].time-count;
 			count++;
+			m=a[i].time-count;
 			sum=sum+a[i].profile;
 		}
 		else
@@ -67,6 +67,7 @@ int push(struct works a[],int n)
 int main()
 {
     struct works w[7] = {{0, 3, 1}, {1, 5, 3}, {2, 20, 4}, {3, 18, 3}, {4, 1, 2}, {5, 6, 1}, {6, 30, 2}};
+    //struct works w[4]={{0,100,2},{1,10,1},{2,15,2},{3,27,1}};
     int n = 7; 
     sort(w, n);
     printf("作业利润由大到小排序为：\n");
