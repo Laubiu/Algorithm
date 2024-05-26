@@ -1,11 +1,11 @@
 #include <iostream>
-#include <cmath> // Ìí¼ÓÍ·ÎÄ¼ş£¬ÓÃÓÚÊ¹ÓÃ abs º¯Êı
+#include <cmath> // æ·»åŠ å¤´æ–‡ä»¶ï¼Œç”¨äºä½¿ç”¨ abs å‡½æ•°
 
 using namespace std;
 
 bool Place(int k, int i, int *x)
 {
-    // ÅĞ¶Ï
+    // åˆ¤æ–­
     for (int j = 0; j < k; j++)
     {
         if (x[j] == i || (abs(x[j] - i) == abs(j - k)))
@@ -23,7 +23,7 @@ void NQueens(int k, int n, int *x)
             x[k] = i;
             if (k == n - 1)
             {
-            	cout << "¿ÉĞĞ·½°¸Îª:" << endl;
+            	cout << "å¯è¡Œæ–¹æ¡ˆä¸º:" << endl;
                 for (int i = 0; i < n; i++)
                 {
                     cout << x[i] << " ";
@@ -41,19 +41,15 @@ void NQueens(int k, int n, int *x)
 int main()
 {
     int n = 4;
-    int m = 5;
-    int *x = new int[n]; // ¶¯Ì¬·ÖÅäÊı×éÄÚ´æ
-    int *y = new int[m];
-    // ³õÊ¼»¯Êı×é
+    int *x = new int[n]; // åŠ¨æ€åˆ†é…æ•°ç»„å†…å­˜
+    // åˆå§‹åŒ–æ•°ç»„
     for (int i = 0; i < n; i++)
     {
         x[i] = 0;
-        y[i] = 0;
     }
 
     NQueens(0, n, x);
-    NQueens(0, m, y);
 
-    delete[] x; // ÊÍ·ÅÄÚ´æ
+    delete[] x; // é‡Šæ”¾å†…å­˜
     return 0;
 }
